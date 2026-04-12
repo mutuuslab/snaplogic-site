@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 
 <!-- Tailwind CSS CDN -->
@@ -31,43 +31,40 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        "surface-variant": "#1a1a24",
-        "on-secondary-container": "#c9a84c",
-        "error-container": "#3d1518",
+        "surface-variant": "#dde2f8",
+        "on-secondary-container": "#006f66",
+        "error-container": "#ffdad6",
         "on-error": "#ffffff",
-        "surface-dim": "#0d0d14",
-        "on-background": "#f0f0f5",
-        "primary": "#c9a84c",
+        "surface-dim": "#d4d9ef",
+        "on-background": "#151b2b",
+        "primary": "#005bbf",
         "on-primary-container": "#ffffff",
-        "primary-fixed": "#2a2520",
-        "tertiary": "#a78bfa",
-        "surface-container-low": "#111118",
-        "secondary": "#c9a84c",
-        "on-secondary": "#0a0a0f",
-        "primary-container": "#c9a84c",
-        "secondary-container": "#2a2418",
-        "on-surface": "#f0f0f5",
-        "tertiary-container": "#7c3aed",
-        "on-tertiary": "#0a0a0f",
-        "on-primary": "#0a0a0f",
-        "surface": "#0a0a0f",
-        "surface-container": "#13131c",
-        "surface-container-lowest": "#080810",
-        "surface-container-high": "#1a1a24",
-        "surface-container-highest": "#22222e",
-        "outline-variant": "#c9a84c",
-        "error": "#ef4444",
-        "outline": "#3a3a4a",
-        "on-surface-variant": "rgba(255,255,255,0.55)",
-        "background": "#0a0a0f",
+        "primary-fixed": "#d8e2ff",
+        "tertiary": "#732de4",
+        "surface-container-low": "#f2f3ff",
+        "secondary": "#006a61",
+        "on-secondary": "#ffffff",
+        "primary-container": "#1a73e8",
+        "secondary-container": "#86f2e4",
+        "on-surface": "#151b2b",
+        "tertiary-container": "#8d4efe",
+        "on-tertiary": "#ffffff",
+        "on-primary": "#ffffff",
+        "surface": "#faf8ff",
+        "surface-container": "#eaedff",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-high": "#e2e7fd",
+        "surface-container-highest": "#dde2f8",
+        "outline-variant": "#c1c6d6",
+        "error": "#ba1a1a",
+        "outline": "#727785",
+        "on-surface-variant": "#414754",
+        "background": "#faf8ff",
         "on-tertiary-container": "#ffffff",
-        "secondary-fixed": "#c9a84c",
-        "on-error-container": "#fca5a5",
-        "tertiary-fixed": "#ddd6fe",
-        "surface-bright": "#1a1a24",
-        "gold": "#c9a84c",
-        "gold-light": "#e0c878",
-        "gold-dark": "#a08030",
+        "secondary-fixed": "#89f5e7",
+        "on-error-container": "#93000a",
+        "tertiary-fixed": "#eaddff",
+        "surface-bright": "#faf8ff",
       },
       borderRadius: {
         DEFAULT: "0.125rem",
@@ -76,7 +73,7 @@ tailwind.config = {
         full: "0.75rem",
       },
       fontFamily: {
-        headline: ["Playfair Display", "Noto Sans KR", "Noto Sans JP", "Noto Sans SC", "serif"],
+        headline: ["Inter", "Noto Sans KR", "Noto Sans JP", "Noto Sans SC", "sans-serif"],
         body: ["Manrope", "Noto Sans KR", "Noto Sans JP", "Noto Sans SC", "sans-serif"],
         label: ["Space Grotesk", "sans-serif"],
       },
@@ -87,14 +84,14 @@ tailwind.config = {
 
 <!-- Custom Styles -->
 <style>
-  /* Kinetic Gradient — Gold */
+  /* Kinetic Gradient */
   .kinetic-gradient {
-    background: linear-gradient(135deg, #c9a84c 0%, #a08030 100%);
+    background: linear-gradient(135deg, #1A73E8 0%, #006a61 100%);
   }
 
-  /* Kinetic Text Gradient — Gold shimmer */
+  /* Kinetic Text Gradient — animated shimmer */
   .kinetic-text-gradient {
-    background: linear-gradient(135deg, #c9a84c 0%, #e0c878 50%, #c9a84c 100%);
+    background: linear-gradient(135deg, #1A73E8 0%, #006a61 50%, #1A73E8 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -107,15 +104,15 @@ tailwind.config = {
     100% { background-position: 0% 50%; }
   }
 
-  /* Glass Nav — Dark */
+  /* Glass Nav */
   .glass-nav {
-    background: rgba(10, 10, 15, 0.85);
+    background: rgba(255, 255, 255, 0.80);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+    border-bottom: 1px solid rgba(193, 198, 214, 0.2);
   }
   .glass-nav.nav--scrolled {
-    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
   }
 
   /* Dot Grid */
@@ -124,28 +121,28 @@ tailwind.config = {
     background-size: 32px 32px;
   }
 
-  /* Glass Card — Dark with gold border */
+  /* Glass Card */
   .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(201, 168, 76, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
   }
 
-  /* Radial Glow — Gold */
+  /* Radial Glow */
   .radial-glow {
     position: absolute;
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(26, 115, 232, 0.15) 0%, transparent 70%);
     pointer-events: none;
   }
 
-  /* Ghost Border — Gold tint */
+  /* Ghost Border */
   .ghost-border {
-    border: 1px solid rgba(201, 168, 76, 0.15);
+    border: 1px solid rgba(193, 198, 214, 0.3);
   }
 
   /* Material Symbols */
@@ -233,7 +230,7 @@ tailwind.config = {
   .reveal {
     opacity: 0;
     transform: translateY(32px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .reveal.visible {
     opacity: 1;
@@ -254,10 +251,10 @@ tailwind.config = {
       right: 0;
       bottom: 0;
       flex-direction: column;
-      background: rgba(10, 10, 15, 0.97);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       overflow-y: auto;
       border-bottom: 1px solid rgba(193, 198, 214, 0.2);
       padding: 16px;
@@ -344,11 +341,10 @@ tailwind.config = {
     scroll-behavior: smooth;
   }
 
-  /* Body — Dark premium */
+  /* Body font */
   body {
     font-family: 'Manrope', 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
-    color: #f0f0f5;
-    background: #0a0a0f;
+    color: #151b2b;
   }
 
   /* Chat message styling */
@@ -397,7 +393,7 @@ tailwind.config = {
 
   /* Nav active link indicator */
   #navLinks a.nav-active {
-    color: #c9a84c;
+    color: #1a73e8;
     position: relative;
   }
   #navLinks a.nav-active::after {
@@ -407,7 +403,7 @@ tailwind.config = {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, #c9a84c, #e0c878);
+    background: linear-gradient(90deg, #1A73E8, #006a61);
     border-radius: 1px;
   }
   @media (max-width: 767px) {
@@ -435,7 +431,7 @@ tailwind.config = {
   .typing-indicator span {
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: #c9a84c;
+    background: #1a73e8;
     opacity: 0.4;
     animation: typingBounce 1.2s infinite;
   }
@@ -467,7 +463,7 @@ tailwind.config = {
      ============================================================ -->
 <header class="fixed top-0 w-full z-50 glass-nav transition-all" id="nav">
   <nav class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto" aria-label="Main navigation">
-    <a class="text-2xl font-black text-gold font-headline tracking-tighter" href="#">VegaFencer</a>
+    <a class="text-2xl font-black text-slate-900 font-headline tracking-tighter" href="#">VegaFencer</a>
     <!-- Mobile toggle -->
     <button class="md:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">
       <span class="block w-6 h-0.5 bg-on-surface transition-all origin-center" id="bar1"></span>
@@ -475,11 +471,11 @@ tailwind.config = {
       <span class="block w-6 h-0.5 bg-on-surface transition-all origin-center" id="bar3"></span>
     </button>
     <div class="hidden md:flex gap-8" id="navLinks">
-      <a class="font-headline font-semibold tracking-tight text-white/60 hover:text-gold transition-colors" href="#product" data-i18n="nav_product">Product</a>
-      <a class="font-headline font-semibold tracking-tight text-white/60 hover:text-gold transition-colors" href="#workflow" data-i18n="nav_workflow">Workflow</a>
-      <a class="font-headline font-semibold tracking-tight text-white/60 hover:text-gold transition-colors" href="#ai" data-i18n="nav_ai">AI</a>
-      <a class="font-headline font-semibold tracking-tight text-white/60 hover:text-gold transition-colors" href="#gallery" data-i18n="nav_gallery">Gallery</a>
-      <a class="font-headline font-semibold tracking-tight text-white/60 hover:text-gold transition-colors" href="#integrations" data-i18n="nav_integrations">Integrations</a>
+      <a class="font-headline font-semibold tracking-tight text-slate-600 hover:text-blue-600 transition-colors" href="#product" data-i18n="nav_product">Product</a>
+      <a class="font-headline font-semibold tracking-tight text-slate-600 hover:text-blue-600 transition-colors" href="#workflow" data-i18n="nav_workflow">Workflow</a>
+      <a class="font-headline font-semibold tracking-tight text-slate-600 hover:text-blue-600 transition-colors" href="#ai" data-i18n="nav_ai">AI</a>
+      <a class="font-headline font-semibold tracking-tight text-slate-600 hover:text-blue-600 transition-colors" href="#gallery" data-i18n="nav_gallery">Gallery</a>
+      <a class="font-headline font-semibold tracking-tight text-slate-600 hover:text-blue-600 transition-colors" href="#integrations" data-i18n="nav_integrations">Integrations</a>
     </div>
     <!-- Language Switcher (Desktop) -->
     <div class="hidden md:flex items-center gap-1 font-label text-xs mr-4" id="langSwitcherDesktop">
@@ -505,10 +501,10 @@ tailwind.config = {
 <!-- ============================================================
      HERO
      ============================================================ -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20" id="about" style="background: radial-gradient(ellipse at 30% 20%, rgba(201,168,76,0.06) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(201,168,76,0.04) 0%, transparent 50%), #0a0a0f;">
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20" id="about" style="background: radial-gradient(ellipse at 30% 20%, rgba(26,115,232,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(0,106,97,0.06) 0%, transparent 50%), #faf8ff;">
   <!-- Decorative Orbs -->
-  <div class="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 hidden sm:block" style="background: radial-gradient(circle, rgba(201,168,76,0.2), transparent 70%);"></div>
-  <div class="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15 hidden sm:block" style="background: radial-gradient(circle, rgba(201,168,76,0.15), transparent 70%);"></div>
+  <div class="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 hidden sm:block" style="background: radial-gradient(circle, rgba(26,115,232,0.3), transparent 70%);"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15 hidden sm:block" style="background: radial-gradient(circle, rgba(0,106,97,0.25), transparent 70%);"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full relative z-10">
     <div class="text-center max-w-4xl mx-auto mb-8 md:mb-12">
@@ -542,7 +538,7 @@ tailwind.config = {
 
     <!-- MacOS Window Mockup -->
     <div class="reveal reveal-delay-3 max-w-5xl mx-auto">
-      <div class="rounded-2xl shadow-2xl shadow-black/30 overflow-hidden border border-outline-variant/15" style="background:rgba(255,255,255,0.03)">
+      <div class="bg-white rounded-2xl shadow-2xl shadow-on-surface/10 overflow-hidden border border-outline-variant/20">
         <!-- Window Chrome -->
         <div class="flex items-center gap-2 px-4 py-3 bg-surface-container-high/40 border-b border-outline-variant/15">
           <span class="w-3 h-3 rounded-full bg-red-400"></span>
@@ -585,7 +581,7 @@ tailwind.config = {
 
     <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
       <!-- Logic -->
-      <a href="#logic" class="reveal reveal-delay-1 group block rounded-[20px]" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.1) p-5 sm:p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary-container/10">
+      <a href="#logic" class="reveal reveal-delay-1 group block bg-white rounded-[20px] p-5 sm:p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary-container/10">
         <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:#E8F0FE">&#9889;</div>
         <h3 class="font-headline font-bold text-xl text-on-surface mb-3 group-hover:text-primary-container transition-colors" data-i18n="mod_logic_title">Logic</h3>
         <p class="font-body text-on-surface-variant text-[15px] leading-relaxed mb-4" data-i18n="mod_logic_desc">전기적 설계 의도를 정의하는 핵심 모듈. 디바이스 핀 연결부터 전기적 오류 검증까지, 모든 설계의 Source of Truth.</p>
@@ -593,7 +589,7 @@ tailwind.config = {
       </a>
 
       <!-- Integrator -->
-      <a href="#integrator" class="reveal reveal-delay-2 group block rounded-[20px]" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.1) p-5 sm:p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-secondary/10">
+      <a href="#integrator" class="reveal reveal-delay-2 group block bg-white rounded-[20px] p-5 sm:p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-secondary/10">
         <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:#CCFBF1">&#128279;</div>
         <h3 class="font-headline font-bold text-xl text-on-surface mb-3 group-hover:text-secondary transition-colors" data-i18n="mod_integrator_title">Integrator</h3>
         <p class="font-body text-on-surface-variant text-[15px] leading-relaxed mb-4" data-i18n="mod_integrator_desc">회로도와 3D 번들 설계를 연결&middot;동기화. 와이어 라우팅, 번들 구성, 토폴로지 검증을 하나의 워크플로우로.</p>
@@ -601,7 +597,7 @@ tailwind.config = {
       </a>
 
       <!-- Harness Drawing -->
-      <a href="#harness" class="reveal reveal-delay-3 group block rounded-[20px]" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.1) p-5 sm:p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-orange-500/10">
+      <a href="#harness" class="reveal reveal-delay-3 group block bg-white rounded-[20px] p-5 sm:p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-orange-500/10">
         <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:#FFF3E0">&#128208;</div>
         <h3 class="font-headline font-bold text-xl text-on-surface mb-3 group-hover:text-orange-600 transition-colors" data-i18n="mod_harness_title">Harness Drawing</h3>
         <p class="font-body text-on-surface-variant text-[15px] leading-relaxed mb-4" data-i18n="mod_harness_desc">상세 하네스 도면 자동 생성. 플러그 심볼, 와이어 리스트, 번들 직경 계산까지 원스톱.</p>
@@ -609,7 +605,7 @@ tailwind.config = {
       </a>
 
       <!-- Variant / Config -->
-      <a href="#variant" class="reveal reveal-delay-4 group block rounded-[20px]" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.1) p-5 sm:p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-tertiary/10">
+      <a href="#variant" class="reveal reveal-delay-4 group block bg-white rounded-[20px] p-5 sm:p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-tertiary/10">
         <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl mb-5" style="background:#EDE9FE">&#127899;&#65039;</div>
         <h3 class="font-headline font-bold text-xl text-on-surface mb-3 group-hover:text-tertiary transition-colors" data-i18n="mod_variant_title">Variant / Config</h3>
         <p class="font-body text-on-surface-variant text-[15px] leading-relaxed mb-4" data-i18n="mod_variant_desc">Variant, Option, Configuration별 다이어그램 필터링. Worst-case 설계 내 특정 구성만 시각화.</p>
@@ -649,7 +645,7 @@ tailwind.config = {
         </ul>
       </div>
       <div class="reveal reveal-delay-2">
-        <div class="rounded-2xl shadow-lg shadow-black/20 overflow-hidden border border-outline-variant/10" style="background:rgba(255,255,255,0.03)">
+        <div class="bg-white rounded-2xl shadow-lg shadow-on-surface/5 overflow-hidden border border-outline-variant/15">
           <img src="images/슬라이드6.JPG" alt="VegaFencer Logic - Objects and Features" loading="lazy" class="w-full block">
         </div>
       </div>
@@ -664,7 +660,7 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
     <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
       <div class="reveal reveal-delay-2 order-2 lg:order-1">
-        <div class="rounded-2xl shadow-lg shadow-black/20 overflow-hidden border border-outline-variant/10" style="background:rgba(255,255,255,0.03)">
+        <div class="bg-white rounded-2xl shadow-lg shadow-on-surface/5 overflow-hidden border border-outline-variant/15">
           <img src="images/슬라이드8.JPG" alt="VegaFencer Integrator UI" loading="lazy" class="w-full block">
         </div>
       </div>
@@ -725,7 +721,7 @@ tailwind.config = {
         </ul>
       </div>
       <div class="reveal reveal-delay-2">
-        <div class="rounded-2xl shadow-lg shadow-black/20 overflow-hidden border border-outline-variant/10" style="background:rgba(255,255,255,0.03)">
+        <div class="bg-white rounded-2xl shadow-lg shadow-on-surface/5 overflow-hidden border border-outline-variant/15">
           <img src="images/슬라이드12.JPG" alt="VegaFencer Harness Drawing UI" loading="lazy" class="w-full block">
         </div>
       </div>
@@ -740,10 +736,10 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
     <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
       <div class="reveal reveal-delay-2 order-2 lg:order-1 flex flex-col gap-4">
-        <div class="rounded-2xl shadow-lg shadow-black/20 overflow-hidden border border-outline-variant/10" style="background:rgba(255,255,255,0.03)">
+        <div class="bg-white rounded-2xl shadow-lg shadow-on-surface/5 overflow-hidden border border-outline-variant/15">
           <img src="images/슬라이드9.JPG" alt="VegaFencer Variant Configuration" loading="lazy" class="w-full block">
         </div>
-        <div class="rounded-2xl shadow-lg shadow-black/20 overflow-hidden border border-outline-variant/10" style="background:rgba(255,255,255,0.03)">
+        <div class="bg-white rounded-2xl shadow-lg shadow-on-surface/5 overflow-hidden border border-outline-variant/15">
           <img src="images/슬라이드10.JPG" alt="VegaFencer DRC/BOM Report" loading="lazy" class="w-full block">
         </div>
       </div>
@@ -777,7 +773,7 @@ tailwind.config = {
 <!-- ============================================================
      WORKFLOW (Dark Section)
      ============================================================ -->
-<section class="py-12 md:py-24 relative overflow-hidden" id="workflow" style="background:#111118">
+<section class="py-12 md:py-24 relative overflow-hidden" id="workflow" style="background:#0B1120">
   <!-- Dot Grid Overlay -->
   <div class="absolute inset-0 dot-grid"></div>
 
@@ -791,7 +787,7 @@ tailwind.config = {
     <!-- Steps Row -->
     <div class="relative mb-20">
       <!-- Connector Line -->
-      <div class="hidden lg:block absolute top-12 left-[12%] right-[12%] h-0.5" style="background:linear-gradient(90deg, #c9a84c, #e0c878, #c9a84c, #a08030); opacity:0.3;"></div>
+      <div class="hidden lg:block absolute top-12 left-[12%] right-[12%] h-0.5" style="background:linear-gradient(90deg, #1A73E8, #006a61, #E8710A, #732de4); opacity:0.3;"></div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Step 01 -->
@@ -875,14 +871,14 @@ tailwind.config = {
             <span data-i18n="ai_c4">OpenAI API 연동 — 사내 LLM 교체 가능</span>
           </li>
         </ul>
-        <div class="rounded-2xl shadow-lg shadow-black/20 overflow-hidden border border-outline-variant/10" style="background:rgba(255,255,255,0.03)">
+        <div class="bg-white rounded-2xl shadow-lg shadow-on-surface/5 overflow-hidden border border-outline-variant/15">
           <img src="images/슬라이드13.JPG" alt="VegaFencer AI Assistant - MCP" loading="lazy" class="w-full block">
         </div>
       </div>
 
       <!-- Right: Chat UI Mockup -->
       <div class="reveal reveal-delay-2">
-        <div class="rounded-2xl shadow-xl shadow-black/30 overflow-hidden border border-outline-variant/10" style="background:rgba(255,255,255,0.03)">
+        <div class="bg-white rounded-2xl shadow-xl shadow-on-surface/8 overflow-hidden border border-outline-variant/20">
           <!-- Chat Header -->
           <div class="flex items-center gap-3 px-6 py-4 border-b border-outline-variant/15 bg-surface-container-lowest">
             <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
@@ -946,19 +942,19 @@ tailwind.config = {
       <h2 class="font-headline font-black text-2xl sm:text-3xl md:text-5xl tracking-tight text-on-surface" data-i18n="stats_title">측정 가능한 설계 혁신</h2>
     </div>
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6" id="statsGrid">
-      <div class="reveal reveal-delay-1 ghost-border rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+      <div class="reveal reveal-delay-1 ghost-border rounded-2xl p-4 sm:p-6 md:p-8 bg-white hover:shadow-lg transition-shadow">
         <div class="font-headline font-black text-3xl sm:text-4xl md:text-6xl text-primary-container mb-2 md:mb-3" data-count-to="70" data-count-suffix="%">0%</div>
         <div class="font-body text-on-surface-variant text-sm" data-i18n="stat1">설계 시간 단축</div>
       </div>
-      <div class="reveal reveal-delay-2 ghost-border rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+      <div class="reveal reveal-delay-2 ghost-border rounded-2xl p-4 sm:p-6 md:p-8 bg-white hover:shadow-lg transition-shadow">
         <div class="font-headline font-black text-3xl sm:text-4xl md:text-6xl text-primary-container mb-2 md:mb-3" data-count-to="24" data-count-suffix="">0</div>
         <div class="font-body text-on-surface-variant text-sm" data-i18n="stat2">DRC 검증 규칙</div>
       </div>
-      <div class="reveal reveal-delay-3 ghost-border rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+      <div class="reveal reveal-delay-3 ghost-border rounded-2xl p-4 sm:p-6 md:p-8 bg-white hover:shadow-lg transition-shadow">
         <div class="font-headline font-black text-3xl sm:text-4xl md:text-6xl text-primary-container mb-2 md:mb-3" data-count-to="100" data-count-suffix="%">0%</div>
         <div class="font-body text-on-surface-variant text-sm" data-i18n="stat3">논리-하네스 일관성</div>
       </div>
-      <div class="reveal reveal-delay-4 ghost-border rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+      <div class="reveal reveal-delay-4 ghost-border rounded-2xl p-4 sm:p-6 md:p-8 bg-white hover:shadow-lg transition-shadow">
         <div class="font-headline font-black text-3xl sm:text-4xl md:text-6xl text-primary-container mb-2 md:mb-3" data-i18n="stat4_value" data-count-to="0" data-count-text="Zero">Zero</div>
         <div class="font-body text-on-surface-variant text-sm" data-i18n="stat4">수동 데이터 변환</div>
       </div>
@@ -978,42 +974,42 @@ tailwind.config = {
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" id="galleryGrid">
       <!-- Gallery Item 0 -->
-      <div class="reveal group cursor-pointer rounded-xl overflow-hidden shadow-sm hover:shadow-xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.08) hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="0" aria-label="Logic Editor — 회로 설계 뷰 — 클릭하여 확대">
+      <div class="reveal group cursor-pointer rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="0" aria-label="Logic Editor — 회로 설계 뷰 — 클릭하여 확대">
         <div class="overflow-hidden">
           <img src="images/슬라이드5.JPG" alt="Logic Editor — 회로 설계 뷰" loading="lazy" class="w-full block group-hover:scale-105 transition-transform duration-500">
         </div>
         <div class="px-4 py-3 font-body text-sm text-on-surface-variant" data-i18n="gallery_cap0">Logic Editor — 회로 설계 뷰</div>
       </div>
       <!-- Gallery Item 1 -->
-      <div class="reveal group cursor-pointer rounded-xl overflow-hidden shadow-sm hover:shadow-xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.08) hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="1" aria-label="Integrator — 토폴로지 & 라우팅 — 클릭하여 확대">
+      <div class="reveal group cursor-pointer rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="1" aria-label="Integrator — 토폴로지 & 라우팅 — 클릭하여 확대">
         <div class="overflow-hidden">
           <img src="images/슬라이드8.JPG" alt="Integrator — 토폴로지 & 라우팅" loading="lazy" class="w-full block group-hover:scale-105 transition-transform duration-500">
         </div>
         <div class="px-4 py-3 font-body text-sm text-on-surface-variant" data-i18n="gallery_cap1">Integrator — 토폴로지 &amp; 라우팅</div>
       </div>
       <!-- Gallery Item 2 -->
-      <div class="reveal group cursor-pointer rounded-xl overflow-hidden shadow-sm hover:shadow-xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.08) hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="2" aria-label="Variant / Option / Configuration — 클릭하여 확대">
+      <div class="reveal group cursor-pointer rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="2" aria-label="Variant / Option / Configuration — 클릭하여 확대">
         <div class="overflow-hidden">
           <img src="images/슬라이드9.JPG" alt="Variant / Option / Configuration" loading="lazy" class="w-full block group-hover:scale-105 transition-transform duration-500">
         </div>
         <div class="px-4 py-3 font-body text-sm text-on-surface-variant" data-i18n="gallery_cap2">Variant / Option / Configuration</div>
       </div>
       <!-- Gallery Item 3 -->
-      <div class="reveal group cursor-pointer rounded-xl overflow-hidden shadow-sm hover:shadow-xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.08) hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="3" aria-label="DRC / BOM Report — 클릭하여 확대">
+      <div class="reveal group cursor-pointer rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="3" aria-label="DRC / BOM Report — 클릭하여 확대">
         <div class="overflow-hidden">
           <img src="images/슬라이드10.JPG" alt="DRC / BOM Report" loading="lazy" class="w-full block group-hover:scale-105 transition-transform duration-500">
         </div>
         <div class="px-4 py-3 font-body text-sm text-on-surface-variant" data-i18n="gallery_cap3">DRC / BOM Report</div>
       </div>
       <!-- Gallery Item 4 -->
-      <div class="reveal group cursor-pointer rounded-xl overflow-hidden shadow-sm hover:shadow-xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.08) hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="4" aria-label="Harness Drawing — 하네스 도면 — 클릭하여 확대">
+      <div class="reveal group cursor-pointer rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="4" aria-label="Harness Drawing — 하네스 도면 — 클릭하여 확대">
         <div class="overflow-hidden">
           <img src="images/슬라이드12.JPG" alt="Harness Drawing — 하네스 도면" loading="lazy" class="w-full block group-hover:scale-105 transition-transform duration-500">
         </div>
         <div class="px-4 py-3 font-body text-sm text-on-surface-variant" data-i18n="gallery_cap4">Harness Drawing — 하네스 도면</div>
       </div>
       <!-- Gallery Item 5 -->
-      <div class="reveal group cursor-pointer rounded-xl overflow-hidden shadow-sm hover:shadow-xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.08) hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="5" aria-label="AI Assistant — MCP 기반 — 클릭하여 확대">
+      <div class="reveal group cursor-pointer rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border border-outline-variant/10" tabindex="0" role="button" data-gallery-index="5" aria-label="AI Assistant — MCP 기반 — 클릭하여 확대">
         <div class="overflow-hidden">
           <img src="images/슬라이드13.JPG" alt="AI Assistant — MCP 기반" loading="lazy" class="w-full block group-hover:scale-105 transition-transform duration-500">
         </div>
@@ -1036,35 +1032,35 @@ tailwind.config = {
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="intGrid">
       <!-- Git -->
-      <div class="reveal reveal-delay-1 rounded-2xl p-6 text-center border border-outline-variant/10" style="background:rgba(255,255,255,0.03) hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="reveal reveal-delay-1 bg-white rounded-2xl p-6 text-center border border-outline-variant/15 hover:shadow-lg hover:-translate-y-1 transition-all">
         <span class="material-symbols-outlined text-on-surface-variant mb-3 block" style="font-size:32px">shortcut</span>
         <h4 class="font-headline font-bold text-on-surface text-sm mb-1">Git</h4>
         <p class="font-body text-on-surface-variant text-xs mb-3" data-i18n="int_git_desc">버전 관리 &amp; 협업</p>
         <span class="inline-block px-2.5 py-1 rounded-full text-[10px] font-label font-bold bg-secondary-container/30 text-secondary" data-i18n="int_available">Available</span>
       </div>
       <!-- DXF/DWG -->
-      <div class="reveal reveal-delay-2 rounded-2xl p-6 text-center border border-outline-variant/10" style="background:rgba(255,255,255,0.03) hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="reveal reveal-delay-2 bg-white rounded-2xl p-6 text-center border border-outline-variant/15 hover:shadow-lg hover:-translate-y-1 transition-all">
         <span class="material-symbols-outlined text-on-surface-variant mb-3 block" style="font-size:32px">square</span>
         <h4 class="font-headline font-bold text-on-surface text-sm mb-1">DXF / DWG</h4>
         <p class="font-body text-on-surface-variant text-xs mb-3" data-i18n="int_dxf_desc">CAD 포맷 임포트</p>
         <span class="inline-block px-2.5 py-1 rounded-full text-[10px] font-label font-bold bg-secondary-container/30 text-secondary" data-i18n="int_available">Available</span>
       </div>
       <!-- AI/MCP -->
-      <div class="reveal reveal-delay-3 rounded-2xl p-6 text-center border border-outline-variant/10" style="background:rgba(255,255,255,0.03) hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="reveal reveal-delay-3 bg-white rounded-2xl p-6 text-center border border-outline-variant/15 hover:shadow-lg hover:-translate-y-1 transition-all">
         <span class="material-symbols-outlined text-on-surface-variant mb-3 block" style="font-size:32px">auto_awesome</span>
         <h4 class="font-headline font-bold text-on-surface text-sm mb-1">AI / MCP</h4>
         <p class="font-body text-on-surface-variant text-xs mb-3" data-i18n="int_ai_desc">LLM 연동 프로토콜</p>
         <span class="inline-block px-2.5 py-1 rounded-full text-[10px] font-label font-bold bg-secondary-container/30 text-secondary" data-i18n="int_available">Available</span>
       </div>
       <!-- Jira -->
-      <div class="reveal reveal-delay-4 rounded-2xl p-6 text-center border border-outline-variant/10" style="background:rgba(255,255,255,0.03) hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="reveal reveal-delay-4 bg-white rounded-2xl p-6 text-center border border-outline-variant/15 hover:shadow-lg hover:-translate-y-1 transition-all">
         <span class="material-symbols-outlined text-on-surface-variant mb-3 block" style="font-size:32px">grid_view</span>
         <h4 class="font-headline font-bold text-on-surface text-sm mb-1">Jira</h4>
         <p class="font-body text-on-surface-variant text-xs mb-3" data-i18n="int_jira_desc">프로젝트 관리</p>
         <span class="inline-block px-2.5 py-1 rounded-full text-[10px] font-label font-bold bg-error-container/40 text-error" data-i18n="int_coming">Coming soon</span>
       </div>
       <!-- Creo/SOLIDWORKS -->
-      <div class="reveal reveal-delay-4 rounded-2xl p-6 text-center border border-outline-variant/10" style="background:rgba(255,255,255,0.03) hover:shadow-lg hover:-translate-y-1 transition-all col-span-2 md:col-span-1">
+      <div class="reveal reveal-delay-4 bg-white rounded-2xl p-6 text-center border border-outline-variant/15 hover:shadow-lg hover:-translate-y-1 transition-all col-span-2 md:col-span-1">
         <span class="material-symbols-outlined text-on-surface-variant mb-3 block" style="font-size:32px">hexagon</span>
         <h4 class="font-headline font-bold text-on-surface text-sm mb-1">Creo / SOLIDWORKS</h4>
         <p class="font-body text-on-surface-variant text-xs mb-3" data-i18n="int_cad_desc">3D CAD 브릿지</p>
@@ -1077,7 +1073,7 @@ tailwind.config = {
 <!-- ============================================================
      CTA
      ============================================================ -->
-<section class="py-16 md:py-32 relative overflow-hidden" id="cta" style="background:#111118">
+<section class="py-16 md:py-32 relative overflow-hidden" id="cta" style="background:#0B1120">
   <!-- Radial Glow -->
   <div class="radial-glow" style="top:-200px;left:50%;transform:translateX(-50%)"></div>
 
@@ -1111,12 +1107,12 @@ tailwind.config = {
 <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer class="border-t border-outline-variant/10 py-10 md:py-16" style="background:#080810">
+<footer class="bg-slate-50 border-t border-outline-variant/20 py-10 md:py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
       <!-- Brand -->
       <div>
-        <div class="font-headline font-black text-xl text-gold mb-3">VegaFencer</div>
+        <div class="font-headline font-black text-xl text-on-surface mb-3">VegaFencer</div>
         <p class="font-body text-on-surface-variant text-sm leading-relaxed" data-i18n-html="footer_tagline">From architecture design to series production.<br>Fast snap, Precise, Vector-driven design.</p>
       </div>
       <!-- Platform -->
@@ -1142,10 +1138,10 @@ tailwind.config = {
       <div class="md:col-span-2 lg:col-span-1">
         <h4 class="font-headline font-bold text-on-surface text-sm mb-4" data-i18n="contact_title">Contact Us</h4>
         <form class="flex flex-col gap-2.5" id="contactForm" onsubmit="return false;">
-          <input class="px-3 py-2 rounded-lg border border-outline-variant/15 bg-white/5 text-sm font-body text-on-surface placeholder-white/30 focus:outline-none focus:border-gold/40 focus:ring-1 focus:ring-gold/20" type="text" name="name" data-i18n-placeholder="contact_name" placeholder="이름" required>
-          <input class="px-3 py-2 rounded-lg border border-outline-variant/15 bg-white/5 text-sm font-body text-on-surface placeholder-white/30 focus:outline-none focus:border-gold/40 focus:ring-1 focus:ring-gold/20" type="text" name="company" data-i18n-placeholder="contact_company" placeholder="회사명">
-          <input class="px-3 py-2 rounded-lg border border-outline-variant/15 bg-white/5 text-sm font-body text-on-surface placeholder-white/30 focus:outline-none focus:border-gold/40 focus:ring-1 focus:ring-gold/20" type="email" name="email" data-i18n-placeholder="contact_email" placeholder="이메일" required>
-          <textarea class="px-3 py-2 rounded-lg border border-outline-variant/15 bg-white/5 text-sm font-body text-on-surface placeholder-white/30 focus:outline-none focus:border-gold/40 focus:ring-1 focus:ring-gold/20 resize-none" name="message" rows="3" data-i18n-placeholder="contact_message" placeholder="문의 내용" required></textarea>
+          <input class="px-3 py-2 rounded-lg border border-outline-variant/30 bg-white text-sm font-body text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/20" type="text" name="name" data-i18n-placeholder="contact_name" placeholder="이름" required>
+          <input class="px-3 py-2 rounded-lg border border-outline-variant/30 bg-white text-sm font-body text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/20" type="text" name="company" data-i18n-placeholder="contact_company" placeholder="회사명">
+          <input class="px-3 py-2 rounded-lg border border-outline-variant/30 bg-white text-sm font-body text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/20" type="email" name="email" data-i18n-placeholder="contact_email" placeholder="이메일" required>
+          <textarea class="px-3 py-2 rounded-lg border border-outline-variant/30 bg-white text-sm font-body text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/20 resize-none" name="message" rows="3" data-i18n-placeholder="contact_message" placeholder="문의 내용" required></textarea>
           <button class="kinetic-gradient text-white px-4 py-2 rounded-lg font-label font-semibold text-sm hover:opacity-90 transition-opacity" type="submit" data-i18n="contact_submit">문의하기</button>
           <p class="hidden text-xs text-secondary font-body" id="contactSuccess" data-i18n="contact_success">감사합니다! 곧 답변드리겠습니다.</p>
           <p class="hidden text-xs text-red-500 font-body" id="contactError" data-i18n="contact_error">전송에 실패했습니다.</p>
@@ -1163,7 +1159,7 @@ tailwind.config = {
 <!-- ============================================================
      SCROLL TO TOP
      ============================================================ -->
-<button class="fixed bottom-4 right-4 md:bottom-8 md:right-8 w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white text-lg z-[100] opacity-0 translate-y-5 transition-all duration-300 shadow-lg" id="scrollTopBtn" aria-label="Scroll to top" style="background:linear-gradient(135deg,#c9a84c,#a08030);box-shadow:0 4px 16px rgba(201,168,76,0.3)">&uarr;</button>
+<button class="fixed bottom-4 right-4 md:bottom-8 md:right-8 w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white text-lg z-[100] opacity-0 translate-y-5 transition-all duration-300 shadow-lg" id="scrollTopBtn" aria-label="Scroll to top" style="background:linear-gradient(135deg,#1A73E8,#006a61);box-shadow:0 4px 16px rgba(26,115,232,0.3)">&uarr;</button>
 
 <!-- ============================================================
      LIGHTBOX
