@@ -1312,6 +1312,7 @@ const i18n = {
     cta_success: "감사합니다! 곧 연락드리겠습니다.",
     cta_sending: "전송 중...",
     cta_error: "전송에 실패했습니다. 다시 시도해주세요.",
+    cta_business_only: "업무용 이메일을 입력해주세요. (Gmail 등 개인 이메일 불가)",
 
     // Footer
     footer_tagline: "아키텍처 설계에서 양산까지.<br>빠른 스냅, 정밀함, 벡터 기반 설계.",
@@ -1487,6 +1488,7 @@ const i18n = {
     cta_success: "Thank you! We will contact you soon.",
     cta_sending: "Sending...",
     cta_error: "Failed to send. Please try again.",
+    cta_business_only: "Please enter a business email. (No personal email like Gmail)",
 
     // Footer
     footer_tagline: "From architecture design to series production.<br>Fast snap, Precise, Vector-driven design.",
@@ -1662,6 +1664,7 @@ const i18n = {
     cta_success: "谢谢！我们将尽快与您联系。",
     cta_sending: "发送中...",
     cta_error: "发送失败，请重试。",
+    cta_business_only: "请输入企业邮箱（不支持Gmail等个人邮箱）",
 
     // Footer
     footer_tagline: "从架构设计到量产。<br>快速、精确、矢量驱动的设计。",
@@ -1837,6 +1840,7 @@ const i18n = {
     cta_success: "ありがとうございます！まもなくご連絡いたします。",
     cta_sending: "送信中...",
     cta_error: "送信に失敗しました。もう一度お試しください。",
+    cta_business_only: "業務用メールアドレスを入力してください（Gmail等の個人メール不可）",
 
     // Footer
     footer_tagline: "アーキテクチャ設計から量産まで。<br>高速、精密、ベクター駆動の設計。",
@@ -1922,6 +1926,13 @@ const Model = {
 /* =============================================================
    CONTROLLER — Application Logic
    ============================================================= */
+const FREE_EMAIL_DOMAINS = ['gmail.com','yahoo.com','yahoo.co.kr','hotmail.com','outlook.com','live.com','aol.com','icloud.com','me.com','mac.com','mail.com','protonmail.com','zoho.com','yandex.com','gmx.com','naver.com','daum.net','hanmail.net','nate.com','kakao.com','qq.com','163.com','126.com','sina.com','yeah.net'];
+
+function isBusinessEmail(email) {
+  const domain = (email.split('@')[1] || '').toLowerCase();
+  return domain && !FREE_EMAIL_DOMAINS.includes(domain);
+}
+
 const Controller = {
   currentLightboxIndex: -1,
   previousFocus: null,
@@ -2084,10 +2095,16 @@ const Controller = {
         email.reportValidity();
         return;
       }
+      const lang = localStorage.getItem('lang') || 'ko';
+      if (!isBusinessEmail(email.value)) {
+        errorEl.textContent = (i18n[lang] && i18n[lang].cta_business_only) || 'Please enter a business email.';
+        errorEl.classList.remove('hidden');
+        errorEl.style.display = 'block';
+        return;
+      }
 
       // Loading state
       submitBtn.disabled = true;
-      const lang = localStorage.getItem('lang') || 'ko';
       submitBtn.textContent = (i18n[lang] && i18n[lang].cta_sending) || 'Sending...';
       errorEl.classList.add('hidden');
 
@@ -2234,8 +2251,14 @@ const Controller = {
         form.reportValidity();
         return;
       }
-      submitBtn.disabled = true;
       const lang = localStorage.getItem('lang') || 'ko';
+      if (!isBusinessEmail(email.value)) {
+        errorEl.textContent = (i18n[lang] && i18n[lang].cta_business_only) || 'Please enter a business email.';
+        errorEl.classList.remove('hidden');
+        errorEl.style.display = 'block';
+        return;
+      }
+      submitBtn.disabled = true;
       submitBtn.textContent = (i18n[lang] && i18n[lang].cta_sending) || 'Sending...';
       errorEl.classList.add('hidden');
 
