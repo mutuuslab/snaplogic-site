@@ -1115,13 +1115,18 @@ tailwind.config = {
           <a href="#integrations" class="font-body text-on-surface-variant text-sm hover:text-primary-container transition-colors" data-i18n="footer_integrations">Integrations</a>
         </div>
       </div>
-      <!-- Company -->
-      <div>
-        <h4 class="font-headline font-bold text-on-surface text-sm mb-4" data-i18n="footer_company">Company</h4>
-        <div class="flex flex-col gap-2.5">
-          <a href="#about" class="font-body text-on-surface-variant text-sm hover:text-primary-container transition-colors" data-i18n="footer_about">About</a>
-          <a href="#cta" class="font-body text-on-surface-variant text-sm hover:text-primary-container transition-colors" onclick="event.preventDefault();document.getElementById('cta').scrollIntoView({behavior:'smooth'})" data-i18n="footer_contact">Contact</a>
-        </div>
+      <!-- Contact Form -->
+      <div class="md:col-span-2 lg:col-span-1">
+        <h4 class="font-headline font-bold text-on-surface text-sm mb-4" data-i18n="contact_title">Contact Us</h4>
+        <form class="flex flex-col gap-2.5" id="contactForm" onsubmit="return false;">
+          <input class="px-3 py-2 rounded-lg border border-outline-variant/30 bg-white text-sm font-body text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/20" type="text" name="name" data-i18n-placeholder="contact_name" placeholder="이름" required>
+          <input class="px-3 py-2 rounded-lg border border-outline-variant/30 bg-white text-sm font-body text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/20" type="text" name="company" data-i18n-placeholder="contact_company" placeholder="회사명">
+          <input class="px-3 py-2 rounded-lg border border-outline-variant/30 bg-white text-sm font-body text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/20" type="email" name="email" data-i18n-placeholder="contact_email" placeholder="이메일" required>
+          <textarea class="px-3 py-2 rounded-lg border border-outline-variant/30 bg-white text-sm font-body text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container/50 focus:ring-1 focus:ring-primary-container/20 resize-none" name="message" rows="3" data-i18n-placeholder="contact_message" placeholder="문의 내용" required></textarea>
+          <button class="kinetic-gradient text-white px-4 py-2 rounded-lg font-label font-semibold text-sm hover:opacity-90 transition-opacity" type="submit" data-i18n="contact_submit">문의하기</button>
+          <p class="hidden text-xs text-secondary font-body" id="contactSuccess" data-i18n="contact_success">감사합니다! 곧 답변드리겠습니다.</p>
+          <p class="hidden text-xs text-red-500 font-body" id="contactError" data-i18n="contact_error">전송에 실패했습니다.</p>
+        </form>
       </div>
     </div>
     <!-- Bottom -->
@@ -1318,6 +1323,14 @@ const i18n = {
     footer_integrations: "통합",
     footer_about: "소개",
     footer_contact: "문의",
+    contact_title: "문의하기",
+    contact_name: "이름",
+    contact_company: "회사명",
+    contact_email: "이메일",
+    contact_message: "문의 내용",
+    contact_submit: "문의하기",
+    contact_success: "감사합니다! 곧 답변드리겠습니다.",
+    contact_error: "전송에 실패했습니다. 다시 시도해주세요.",
     footer_copy: "&copy; 2026 VegaFencer. All rights reserved.",
     footer_legal: "Privacy &middot; Terms &middot; Security",
   },
@@ -1485,6 +1498,14 @@ const i18n = {
     footer_integrations: "Integrations",
     footer_about: "About",
     footer_contact: "Contact",
+    contact_title: "Contact Us",
+    contact_name: "Name",
+    contact_company: "Company",
+    contact_email: "Email",
+    contact_message: "Message",
+    contact_submit: "Send",
+    contact_success: "Thank you! We'll get back to you soon.",
+    contact_error: "Failed to send. Please try again.",
     footer_copy: "&copy; 2026 VegaFencer. All rights reserved.",
     footer_legal: "Privacy &middot; Terms &middot; Security",
   },
@@ -1652,6 +1673,14 @@ const i18n = {
     footer_integrations: "集成",
     footer_about: "关于",
     footer_contact: "联系我们",
+    contact_title: "联系我们",
+    contact_name: "姓名",
+    contact_company: "公司",
+    contact_email: "邮箱",
+    contact_message: "留言内容",
+    contact_submit: "发送",
+    contact_success: "谢谢！我们会尽快回复。",
+    contact_error: "发送失败，请重试。",
     footer_copy: "&copy; 2026 VegaFencer. All rights reserved.",
     footer_legal: "隐私政策 &middot; 条款 &middot; 安全",
   },
@@ -1819,6 +1848,14 @@ const i18n = {
     footer_integrations: "統合",
     footer_about: "概要",
     footer_contact: "お問い合わせ",
+    contact_title: "お問い合わせ",
+    contact_name: "お名前",
+    contact_company: "会社名",
+    contact_email: "メールアドレス",
+    contact_message: "お問い合わせ内容",
+    contact_submit: "送信",
+    contact_success: "ありがとうございます！折り返しご連絡いたします。",
+    contact_error: "送信に失敗しました。もう一度お試しください。",
     footer_copy: "&copy; 2026 VegaFencer. All rights reserved.",
     footer_legal: "プライバシー &middot; 利用規約 &middot; セキュリティ",
   },
@@ -1902,6 +1939,7 @@ const Controller = {
     this.initNavActiveState();
     this.initCounters();
     this.initChatAnimation();
+    this.initContactForm();
   },
 
   /* Language — initialize from localStorage or default to 'ko' */
@@ -2176,6 +2214,57 @@ const Controller = {
       });
     }, { threshold: 0.2 });
     observer.observe(container);
+  },
+
+  /* Contact Form — Footer inquiry form */
+  initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successEl = document.getElementById('contactSuccess');
+    const errorEl = document.getElementById('contactError');
+    const originalText = submitBtn.textContent;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.querySelector('input[name="name"]');
+      const email = form.querySelector('input[name="email"]');
+      const message = form.querySelector('textarea[name="message"]');
+      if (!email.value || !email.checkValidity() || !name.value || !message.value) {
+        form.reportValidity();
+        return;
+      }
+      submitBtn.disabled = true;
+      const lang = localStorage.getItem('lang') || 'ko';
+      submitBtn.textContent = (i18n[lang] && i18n[lang].cta_sending) || 'Sending...';
+      errorEl.classList.add('hidden');
+
+      fetch('https://formsubmit.co/ajax/tobiaskim@mutuus-lab.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: name.value,
+          company: form.querySelector('input[name="company"]').value || '-',
+          email: email.value,
+          message: message.value,
+          _subject: 'VegaFencer Contact from ' + name.value,
+          _cc: 'srlee711@mutuus-lab.com',
+          _template: 'table',
+        }),
+      }).then(r => r.json()).then(data => {
+        if (data.success) {
+          form.style.display = 'none';
+          successEl.classList.remove('hidden');
+          successEl.style.display = 'block';
+        } else { throw new Error(); }
+      }).catch(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        errorEl.textContent = (i18n[lang] && i18n[lang].contact_error) || 'Failed to send.';
+        errorEl.classList.remove('hidden');
+        errorEl.style.display = 'block';
+      });
+    });
   },
 };
 
