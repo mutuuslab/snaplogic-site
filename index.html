@@ -2076,13 +2076,13 @@ const Controller = {
       errorEl.classList.add('hidden');
 
       // Send via FormSubmit.co (no signup required)
-      fetch('https://formsubmit.co/ajax/srlee711@mutuus-lab.com', {
+      fetch('https://formsubmit.co/ajax/tobiaskim@mutuus-lab.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           email: email.value,
           _subject: 'VegaFencer Demo Request from ' + email.value,
-          _cc: 'tobiaskim@mutuus-lab.com',
+          _cc: 'srlee711@mutuus-lab.com',
           _template: 'table',
           message: 'New demo request from: ' + email.value,
         }),
