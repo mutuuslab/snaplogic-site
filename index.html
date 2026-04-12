@@ -24,9 +24,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 
-<!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
@@ -2058,11 +2055,6 @@ const Controller = {
 
   /* CTA Form — prevent default, validate, show success message */
   initCtaForm() {
-    // Initialize EmailJS — replace YOUR_PUBLIC_KEY with actual key from emailjs.com
-    if (typeof emailjs !== 'undefined') {
-      emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' });
-    }
-
     const form = document.getElementById('ctaForm');
     const submitBtn = form.querySelector('button[type="submit"]');
     const successEl = document.getElementById('ctaSuccess');
@@ -2083,15 +2075,23 @@ const Controller = {
       submitBtn.textContent = (i18n[lang] && i18n[lang].cta_sending) || 'Sending...';
       errorEl.classList.add('hidden');
 
-      // Send via EmailJS — replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-        from_email: email.value,
-        to_email: 'srlee711@mutuus-lab.com,tobiaskim@mutuus-lab.com',
-        message: 'Demo request from ' + email.value,
-      }).then(() => {
-        form.style.display = 'none';
-        successEl.classList.remove('hidden');
-        successEl.style.display = 'block';
+      // Send via FormSubmit.co (no signup required)
+      fetch('https://formsubmit.co/ajax/srlee711@mutuus-lab.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          email: email.value,
+          _subject: 'VegaFencer Demo Request from ' + email.value,
+          _cc: 'tobiaskim@mutuus-lab.com',
+          _template: 'table',
+          message: 'New demo request from: ' + email.value,
+        }),
+      }).then(r => r.json()).then(data => {
+        if (data.success) {
+          form.style.display = 'none';
+          successEl.classList.remove('hidden');
+          successEl.style.display = 'block';
+        } else { throw new Error(); }
       }).catch(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnHTML;
