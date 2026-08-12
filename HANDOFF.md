@@ -100,7 +100,7 @@ snaplogic-site/
 ### 폼 이메일 발송 (FormSubmit.co)
 - **데모 신청 폼**: `index.html`에서 `initCtaForm` 검색
 - **문의 폼 (Footer)**: `initContactForm` 검색
-- **수신자**: `tobiaskim@mutuus-lab.com` (CC: `srlee711@mutuus-lab.com`)
+- **수신자**: `tobiaskim@mutuus-lab.com` (CC: `srlee711@mutuus-lab.com`, `srlee711@gmail.com`, `tobiaskim2017@gmail.com`)
 - **비즈니스 이메일 검증**: `FREE_EMAIL_DOMAINS` 배열 (Gmail, Naver 등 차단)
 - **활성화 절차**: 첫 신청 시 `tobiaskim@mutuus-lab.com`으로 오는 FormSubmit.co 메일에서 **Confirm** 클릭 1회 필요
 

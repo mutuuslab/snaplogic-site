@@ -2515,7 +2515,7 @@ const Controller = {
         body: JSON.stringify({
           email: email.value,
           _subject: 'VegaFencer Demo Request from ' + email.value,
-          _cc: 'srlee711@mutuus-lab.com',
+          _cc: 'srlee711@mutuus-lab.com, srlee711@gmail.com, tobiaskim2017@gmail.com',
           _template: 'table',
           message: 'New demo request from: ' + email.value,
         }),
@@ -2725,7 +2725,7 @@ const Controller = {
           email: email.value,
           message: message.value,
           _subject: 'VegaFencer Contact from ' + name.value,
-          _cc: 'srlee711@mutuus-lab.com',
+          _cc: 'srlee711@mutuus-lab.com, srlee711@gmail.com, tobiaskim2017@gmail.com',
           _template: 'table',
         }),
       }).then(r => r.json()).then(data => {
