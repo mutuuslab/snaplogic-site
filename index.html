@@ -272,6 +272,28 @@ tailwind.config = {
   }
 
   /* ===== Mobile-first responsive overrides ===== */
+
+  /* Ultra-small devices (320-479px) */
+  @media (max-width: 479px) {
+    nav.flex { padding-left: 0.75rem; padding-right: 0.75rem; }
+    .max-w-7xl { padding-left: 0.75rem; padding-right: 0.75rem; }
+
+    /* Stats — prevent overflow on tiny screens */
+    #statsGrid .font-headline.font-black {
+      font-size: 2rem !important;
+    }
+
+    /* Chat messages — wider on tiny screens */
+    #chatMessages .flex.justify-end > div { max-width: 92% !important; }
+    #chatMessages .flex.justify-start > div { max-width: 96% !important; }
+
+    /* Chat action buttons — larger touch targets */
+    #chatMessages button {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+  }
+
   @media (max-width: 639px) {
     /* Reduce horizontal padding globally */
     .max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
@@ -279,7 +301,7 @@ tailwind.config = {
     /* Hero */
     .hero-headline { font-size: 2rem !important; line-height: 1.15 !important; }
 
-    /* Stats — smaller numbers on tiny screens */
+    /* Stats — smaller numbers on small screens */
     #statsGrid .font-headline.font-black {
       font-size: 2.5rem !important;
     }
@@ -294,15 +316,20 @@ tailwind.config = {
       min-height: 48px;
     }
 
-    /* Trust bar logos */
-    .trust-logos { gap: 1.5rem !important; }
+    /* Hero slideshow indicator dots — larger touch area */
+    .hero-dot {
+      width: 10px !important;
+      height: 10px !important;
+      padding: 8px;
+      box-sizing: content-box;
+    }
 
-    /* Footer grid — stack on mobile */
-    .footer-grid { gap: 2rem !important; }
-
-    /* Chat UI — full width messages */
-    .chat-msg-user { max-width: 90% !important; }
-    .chat-msg-ai { max-width: 95% !important; }
+    /* Contact form inputs — more padding on mobile */
+    #contactForm input,
+    #contactForm textarea {
+      padding: 10px 14px;
+      font-size: 16px; /* prevent iOS zoom */
+    }
   }
 
   @media (max-width: 767px) {
@@ -317,6 +344,10 @@ tailwind.config = {
 
     /* Integrations grid — reduce gap */
     #intGrid { gap: 0.5rem; }
+
+    /* Lightbox nav buttons — away from edge */
+    #lightbox button[aria-label="Previous"] { left: 8px !important; }
+    #lightbox button[aria-label="Next"] { right: 8px !important; }
   }
 
   /* Safe area inset for notched phones */
@@ -1190,9 +1221,9 @@ const i18n = {
     skip_link: "메인 콘텐츠로 이동",
 
     // Hero
-    hero_badge: "Now available — VegaFencer Logic v1.0",
+    hero_badge: "Made in Germany 🇩🇪 — VegaFencer Logic v1.0",
     hero_title: 'From architecture design<br>to <span class="kinetic-text-gradient">series production</span>',
-    hero_subtitle: "요구사항 정의부터 와이어링 하네스 설계까지 — 차량 E/E 개발 전 과정을 하나의 플랫폼으로 통합합니다. 데이터 모델링 기반의 정밀한 엔지니어링 솔루션.",
+    hero_subtitle: "독일에서 개발된 정밀 엔지니어링 플랫폼. 요구사항 정의부터 와이어링 하네스 설계까지 — 차량 E/E 개발 전 과정을 하나의 플랫폼으로 통합합니다.",
     hero_cta_demo: 'Request Demo <span class="ml-1">&rarr;</span>',
     hero_cta_video: '<span class="material-symbols-outlined text-base align-middle mr-1" style="font-size:18px">play_circle</span> Watch Video',
 
@@ -1366,9 +1397,9 @@ const i18n = {
     skip_link: "Skip to main content",
 
     // Hero
-    hero_badge: "Now available — VegaFencer Logic v1.0",
+    hero_badge: "Made in Germany 🇩🇪 — VegaFencer Logic v1.0",
     hero_title: 'From architecture design<br>to <span class="kinetic-text-gradient">series production</span>',
-    hero_subtitle: "From requirement definition to wiring harness design — unifying the entire vehicle E/E development process on a single platform. Precision engineering solutions based on data modeling.",
+    hero_subtitle: "Precision engineering platform developed in Germany. From requirement definition to wiring harness design — unifying the entire vehicle E/E development process on a single platform.",
     hero_cta_demo: 'Request Demo <span class="ml-1">&rarr;</span>',
     hero_cta_video: '<span class="material-symbols-outlined text-base align-middle mr-1" style="font-size:18px">play_circle</span> Watch Video',
 
